@@ -1,0 +1,20 @@
+/**************************************************
+    PAGE - HOME
+    PAGE - HOME
+    PAGE - HOME
+**************************************************/
+.zdf-page-home__section {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.zdf-home__name {
+    font-size: 10vw;
+}
+
+@media (min-width: 960px) {
+    .zdf-home__name {
+        font-size: 96px;
+    }
+}

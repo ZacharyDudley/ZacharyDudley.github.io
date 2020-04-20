@@ -1,0 +1,23 @@
+/**************************************************
+    PAGE - CONTACT
+    PAGE - CONTACT
+    PAGE - CONTACT
+**************************************************/
+
+.zdf-page-contact {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-end; */
+}
+
+.zdf-page-contact__link {
+    text-decoration: none;
+    color: #000000;
+    font-size: 18vw;
+}
+
+@media (min-width: 768px) {
+    .zdf-page-contact__link {
+        font-size: 8.6rem;
+    }
+}

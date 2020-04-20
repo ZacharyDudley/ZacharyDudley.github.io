@@ -1,0 +1,120 @@
+@font-face {
+    font-family: 'MovementV';
+    src: url('../font/MovementV.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'PublicSans';
+    src: url('../font/PublicSans-Thin.ttf') format('truetype');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'PublicSans', system-ui, -apple-system;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+main {
+    height: 100%;
+}
+
+
+
+/**************************************************
+    UTILITY
+    UTILITY
+    UTILITY
+**************************************************/
+.zdf-flex {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.zdf-page {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 1.5rem;
+    left: -100%;
+    top: 0;
+    overflow: hidden;
+}
+
+.zdf-page--active {
+    left: 0;
+}
+
+.zdf-title {
+    font-family: 'MovementV', system-ui, -apple-system;
+}
+
+.zdf-link {
+    font-family: 'MovementV', system-ui, -apple-system;
+    font-weight: 100;
+    transition: font-weight 0.5s;
+}
+
+.zdf-link:hover,
+.zdf-link--active {
+    font-weight: 900;
+}
+
+.zdf-button {
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.zdf-details {
+    margin-bottom: 15px;
+}
+
+.zdf-details summary {
+    list-style-position: outside;
+    margin-left: 15px;
+}
+
+
+
+/**************************************************
+    PAGE
+    PAGE
+    PAGE
+**************************************************/
+
+/* .zdf-page__section:first-of-type {
+    margin-top: 100px;
+} */
+
+.zdf-page__section:last-of-type {
+    margin-bottom: 100px;
+}
+
+/* @media (min-width: 641px) {
+    .zdf-page__section:first-of-type {
+        margin-top: 25px;
+    }
+} */
+
+.zdf-page__subtitle {
+    font-size: 2rem;
+}
+
+.zdf-page__list {
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.zdf-page__list-item {
+    scroll-snap-align: center;
+}
+

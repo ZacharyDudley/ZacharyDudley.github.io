@@ -1,0 +1,95 @@
+/**************************************************
+    PAGE - RESUME
+    PAGE - RESUME
+    PAGE - RESUME
+**************************************************/
+
+.zdf-page-resume {
+    justify-content: flex-start;
+}
+
+.zdf-page-resume__skills,
+.zdf-page-resume__experience,
+.zdf-page-resume__education {
+    flex: 0 1 auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.zdf-page-resume__education {
+    margin-bottom: 0;
+}
+
+.zdf-page-resume__skills .zdf-page__subtitle,
+.zdf-page-resume__experience .zdf-page__subtitle,
+.zdf-page-resume__education .zdf-page__subtitle {
+    margin-bottom: 10px;
+}
+
+.zdf-page-resume .zdf-page__list-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    padding: 10px;
+    flex: 1 0 100%;
+    margin-left: 10px;
+    border: 3px solid #000000;
+}
+
+.zdf-page-resume .zdf-page__list-item:first-of-type {
+    margin-left: 0;
+}
+
+.zdf-resume-experience__title,
+.zdf-resume-education__title {
+    font-size: 2rem;
+    flex: 1 1 100%;
+    margin-bottom: 5px;
+}
+
+.zdf-resume-experience__company {
+    font-weight: 900;
+    flex: 1 1 100%;
+    margin-left: 30px;
+    margin-bottom: 5px;
+}
+
+.zdf-resume-experience__location,
+.zdf-resume-experience__date,
+.zdf-resume-education__location,
+.zdf-resume-education__date {
+    margin-left: 30px;
+    flex: 0 1 auto;
+    margin-bottom: 5px;
+}
+
+.zdf-resume-experience__description,
+.zdf-resume-education__degree {
+    flex: 1 1 100%;
+}
+
+.zdf-button-scroll {
+    position: absolute;
+    top: 50%;
+    border: none;
+    scale: 1.5;
+}
+
+.zdf-button-scroll path {
+    stroke: #000000;
+    fill: #ffffff;
+}
+
+.zdf-button-scroll--left {
+    left: 0;
+    transform: translateX(-30%);
+}
+
+.zdf-button-scroll--right {
+    right: 0;
+    transform: translateX(30%);
+}
