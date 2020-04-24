@@ -89,9 +89,35 @@ class Website {
             this.pages[id].button.addEventListener('click', () => this.setActivePage(id));
         });
 
+        this.setPageSize();
         this.startNameChange();
         this.attachWorkCollapseHandlers();
         this.attachResumeScrollHandlers();
+    }
+
+    setPageSize() {
+        const setSize = () => {
+            const height = window.innerHeight;
+            const width = window.innerWidth;
+            const html = document.querySelector('html');
+            html.style.height = `${height}px`;
+            html.style.width = `${width}px`;
+        }
+
+        window.addEventListener('load', setSize);
+
+        let isResizing = false;
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            if (!isResizing) {
+                clearTimeout(resizeTimeout);
+                resizeTimeout = setTimeout(() => {
+                    isResizing = false;
+                    setSize();
+                }, 100);
+            }
+        });
+
     }
 
     setActivePage(id) {
@@ -187,14 +213,14 @@ class Website {
 
             buttonLeft.addEventListener('click', () => {
                 container.scrollBy({
-                    left: (container.offsetWidth * -1),
+                    left: -(container.offsetWidth + 10),
                     behavior: 'smooth',
                 });
             });
 
             buttonRight.addEventListener('click', () => {
                 container.scrollBy({
-                    left: container.offsetWidth,
+                    left: container.offsetWidth + 10,
                     behavior: 'smooth',
                 });
             });
