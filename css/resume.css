@@ -3,28 +3,25 @@
     PAGE - RESUME
     PAGE - RESUME
 **************************************************/
-
 .zdf-page-resume {
     justify-content: flex-start;
+    display: flex;
+    flex-flow: column nowrap;
 }
 
-.zdf-page-resume__skills,
-.zdf-page-resume__experience,
-.zdf-page-resume__education {
-    flex: 0 1 auto;
+.zdf-page-resume__section {
+    flex: 1 1 auto;
     display: flex;
     flex-direction: column;
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
 .zdf-page-resume__education {
     margin-bottom: 0;
 }
 
-.zdf-page-resume__skills .zdf-page__subtitle,
-.zdf-page-resume__experience .zdf-page__subtitle,
-.zdf-page-resume__education .zdf-page__subtitle {
+.zdf-page-resume__section .zdf-page__subtitle {
     margin-bottom: 10px;
 }
 
@@ -72,6 +69,18 @@
     flex: 1 1 100%;
 }
 
+@media (min-width: 641px) {
+    .zdf-page-resume .zdf-page__list-item {
+        /* flex: 0 0 400px; */
+    }
+}
+
+
+/**************************************************
+    SCROLL BUTTONS
+    SCROLL BUTTONS
+    SCROLL BUTTONS
+**************************************************/
 .zdf-button-scroll {
     position: absolute;
     top: 50%;

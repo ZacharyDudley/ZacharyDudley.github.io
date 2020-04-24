@@ -12,42 +12,46 @@
     box-sizing: border-box;
 }
 
+html,
 body {
     font-family: 'PublicSans', system-ui, -apple-system;
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
     position: relative;
+    display: flex;
+    flex-flow: column-reverse nowrap;
 }
 
 main {
-    height: 100%;
-}
-
-
-
-/**************************************************
-    UTILITY
-    UTILITY
-    UTILITY
-**************************************************/
-.zdf-flex {
+    flex: 1 1 auto;
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: row nowrap;
+    position: relative;
+    max-height: calc(100% - (6vh + 46px));
 }
 
 .zdf-page {
-    position: absolute;
-    height: 100%;
-    width: 100%;
+    max-width: 100%;
     padding: 1.5rem;
-    left: -100%;
+    flex: 0 0 100%;
+    overflow: hidden auto;
+    position: absolute;
     top: 0;
-    overflow: hidden;
+    bottom: 0;
+    width: 100%;
+    left: 100%;
+    transition: left 0.3s ease;
 }
 
 .zdf-page--active {
     left: 0;
+}
+
+.zdf-page.overflow {
+    box-shadow: inset 0px -40px 30px -30px #000000;
+    -webkit-box-shadow: inset 0px -40px 30px -30px #000000;
+    -moz-box-shadow: inset 0px -40px 30px -30px #000000;
 }
 
 .zdf-title {
@@ -79,28 +83,6 @@ main {
     margin-left: 15px;
 }
 
-
-
-/**************************************************
-    PAGE
-    PAGE
-    PAGE
-**************************************************/
-
-/* .zdf-page__section:first-of-type {
-    margin-top: 100px;
-} */
-
-.zdf-page__section:last-of-type {
-    margin-bottom: 100px;
-}
-
-/* @media (min-width: 641px) {
-    .zdf-page__section:first-of-type {
-        margin-top: 25px;
-    }
-} */
-
 .zdf-page__subtitle {
     font-size: 2rem;
 }
@@ -117,4 +99,3 @@ main {
 .zdf-page__list-item {
     scroll-snap-align: center;
 }
-
