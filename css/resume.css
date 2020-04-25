@@ -15,6 +15,7 @@
     flex-direction: column;
     position: relative;
     margin-bottom: 5px;
+    max-width: 600px;
 }
 
 .zdf-page-resume__education {
@@ -70,8 +71,8 @@
 }
 
 @media (min-width: 641px) {
-    .zdf-page-resume .zdf-page__list-item {
-        /* flex: 0 0 400px; */
+    .zdf-page-resume__section {
+        margin-left: 7%;
     }
 }
 
