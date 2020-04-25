@@ -70,7 +70,7 @@
     flex: 1 1 100%;
 }
 
-@media (min-width: 641px) {
+@media (min-width: 769px) {
     .zdf-page-resume__section {
         margin-left: 7%;
     }
