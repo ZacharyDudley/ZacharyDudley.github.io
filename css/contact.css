@@ -16,8 +16,9 @@
     font-size: 18vw;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     .zdf-page-contact__link {
+        margin-left: 7%;
         font-size: 8.6rem;
     }
 }

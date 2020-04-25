@@ -13,6 +13,12 @@
     font-size: 10vw;
 }
 
+@media (min-width: 769px) {
+    .zdf-page-home__section {
+        margin-left: 7%;
+    }
+}
+
 @media (min-width: 960px) {
     .zdf-home__name {
         font-size: 96px;
