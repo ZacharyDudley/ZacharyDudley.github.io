@@ -123,12 +123,25 @@ class Website {
     setActivePage(id) {
         const pageOld = this.pages[this.activePage];
         const pageNew = this.pages[id];
+        const animateIn = () => {
+            pageNew.element.removeEventListener('animationend', animateIn);
+            pageNew.element.classList.remove('animating');
+        };
+        const animateOut = () => {
+            pageOld.element.removeEventListener('animationend', animateOut);
+            pageOld.element.classList.remove('animating');
+            pageOld.element.classList.add('hidden');
+        };
 
-        pageOld.element.classList.remove('zdf-page--active');
+        pageNew.element.addEventListener('animationend', animateIn);
+        pageOld.element.addEventListener('animationend', animateOut);
+
         pageOld.button.classList.remove('zdf-link--active');
-
-        pageNew.element.classList.add('zdf-page--active');
         pageNew.button.classList.add('zdf-link--active');
+
+        pageOld.element.classList.add('animating');
+        pageNew.element.classList.remove('hidden');
+        pageNew.element.classList.add('active');
 
         this.activePage = id;
     }

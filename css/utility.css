@@ -42,11 +42,38 @@ main {
     bottom: 0;
     width: 100%;
     left: 100%;
-    transition: left 0.3s ease;
 }
 
-.zdf-page--active {
-    left: 0;
+.zdf-page.active {
+    animation: slideIn 0.3s ease both;
+}
+
+.zdf-page.animating {
+    animation: slideOut 0.3s ease both;
+}
+
+.zdf-page.hidden {
+    display: none;
+}
+
+@keyframes slideIn {
+    from {
+        left: 100%;
+    }
+
+    to {
+        left: 0;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 100%;
+    }
 }
 
 .zdf-page.overflow {
