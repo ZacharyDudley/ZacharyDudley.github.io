@@ -121,6 +121,8 @@ class Website {
     }
 
     setActivePage(id) {
+        if (id === this.activePage) return;
+
         const pageOld = this.pages[this.activePage];
         const pageNew = this.pages[id];
         const animateIn = () => {
