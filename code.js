@@ -1,5 +1,6 @@
 class Website {
     constructor() {
+        this.window = window;
         this.activePage = 'home';
         this.pages = {
             home: {
@@ -80,35 +81,36 @@ class Website {
             element: document.getElementById('title-name-three'),
             interval: null,
         };
+        this.modalIsOpen = false;
+        this.touchLength = 1000;
+        this.touchTimer = null;
 
         this.init();
     }
 
     init() {
-        Object.keys(this.pages).forEach((id) => {
-            this.pages[id].button.addEventListener('click', () => this.setActivePage(id));
-        });
-
         this.setPageSize();
         this.startNameChange();
+        this.attachMenuClickHandlers();
         this.attachWorkCollapseHandlers();
         this.attachResumeScrollHandlers();
+        this.attachModalHandlers();
     }
 
     setPageSize() {
         const setSize = () => {
             const height = window.innerHeight;
             const width = window.innerWidth;
-            const html = document.querySelector('html');
-            html.style.height = `${height}px`;
-            html.style.width = `${width}px`;
+            const body = document.querySelector('body');
+            body.style.height = `${height}px`;
+            body.style.width = `${width}px`;
         }
 
-        window.addEventListener('load', setSize);
+        this.window.addEventListener('load', setSize);
 
         let isResizing = false;
         let resizeTimeout;
-        window.addEventListener('resize', () => {
+        this.window.addEventListener('resize', () => {
             if (!isResizing) {
                 clearTimeout(resizeTimeout);
                 resizeTimeout = setTimeout(() => {
@@ -117,7 +119,6 @@ class Website {
                 }, 100);
             }
         });
-
     }
 
     setActivePage(id) {
@@ -255,26 +256,162 @@ class Website {
             toggleArrows();
         });
     }
+
+    toggleModal() {
+        const body = document.querySelector('body');
+        const modal = document.getElementById('zdf-modal');
+        const form = document.getElementById('zdf-form');
+        const input = form.querySelector('.zdf-form-input input');
+        const keyListener = (event) => {
+            if (event.key === 'Escape') {
+                this.window.removeEventListener('keyup', keyListener);
+                this.toggleModal();
+            }
+        };
+
+        if (!this.modalIsOpen) {
+            if (!body.classList.contains('show-modal')) body.classList.add('show-modal');
+            if (!modal.classList.contains('show')) modal.classList.add('show');
+
+            this.window.addEventListener('keyup', keyListener);
+            input.focus();
+        } else {
+            if (body.classList.contains('show-modal')) body.classList.remove('show-modal');
+            if (modal.classList.contains('show')) modal.classList.remove('show');
+
+            form.reset();
+        }
+
+        this.modalIsOpen = !this.modalIsOpen;
+    }
+
+    attachModalHandlers() {
+        const buttonClose = document.querySelector('#zdf-modal .zdf-button--close');
+        const form = document.getElementById('zdf-form');
+
+        buttonClose.addEventListener('click', () => {
+            this.toggleModal();
+        });
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const html = document.querySelector('html');
+            const input = form.querySelector('.zdf-form-input');
+            const removeAnimation = () => {
+                input.removeEventListener('animationend', removeAnimation);
+                input.classList.remove('animating');
+            };
+            let inputIsValid = false;
+            const guess = form.elements[0].value.toLowerCase().trim();
+
+            switch (guess) {
+                case 'white':
+                case 'default':
+                    html.style.setProperty('--color-background', '#ffffff');
+                    html.style.setProperty('--color-background-transparent', '#ffffffcc');
+                    html.style.setProperty('--color-background-name', '#d2d2d2a8');
+                    html.style.setProperty('--color-text', '#16161d');
+                    html.style.setProperty('--color-text-background', '#ffffffcc');
+                    html.style.setProperty('--color-text-background-opaque', '#ffffff');
+                    html.style.setProperty('--color-link', 'var(--color-text)');
+                    html.style.setProperty('--color-outline', 'var(--color-text)');
+                    html.style.setProperty('--color-scroll-button-stroke', 'var(--color-outline)');
+                    html.style.setProperty('--color-scroll-button-fill', 'var(--color-text-background-opaque)');
+                    inputIsValid = true;
+                    break;
+                case 'black':
+                    html.style.setProperty('--color-background', '#16161d');
+                    html.style.setProperty('--color-background-transparent', '#16161dcc');
+                    html.style.setProperty('--color-background-name', '#737373a8');
+                    html.style.setProperty('--color-text', '#e9e9e2');
+                    html.style.setProperty('--color-text-background', '#4c4c4ccc');
+                    html.style.setProperty('--color-text-background-opaque', '#4c4c4c');
+                    html.style.setProperty('--color-link', 'var(--color-text)');
+                    html.style.setProperty('--color-outline', 'var(--color-text)');
+                    html.style.setProperty('--color-scroll-button-stroke', 'var(--color-outline)');
+                    html.style.setProperty('--color-scroll-button-fill', 'var(--color-text-background-opaque)');
+                    inputIsValid = true;
+                    break;
+                case 'teal':
+                    html.style.setProperty('--color-background', '#0f8b8d');
+                    html.style.setProperty('--color-background-transparent', '#0f8b8dcc');
+                    html.style.setProperty('--color-background-name', '#3cbbb1');
+                    html.style.setProperty('--color-text', '#143642');
+                    html.style.setProperty('--color-text-background', '#40798ccc ');
+                    html.style.setProperty('--color-text-background-opaque', '#40798c');
+                    html.style.setProperty('--color-link', 'var(--color-text)');
+                    html.style.setProperty('--color-outline', 'var(--color-text)');
+                    html.style.setProperty('--color-scroll-button-stroke', 'var(--color-outline)');
+                    html.style.setProperty('--color-scroll-button-fill', 'var(--color-text-background-opaque)');
+                    inputIsValid = true;
+                    break;
+                case 'dark blue':
+                    html.style.setProperty('--color-background', '#313e50');
+                    html.style.setProperty('--color-background-transparent', '#313e50cc');
+                    html.style.setProperty('--color-background-name', '#545863');
+                    html.style.setProperty('--color-text', '#a8a8a8');
+                    html.style.setProperty('--color-text-background', '#16161dcc');
+                    html.style.setProperty('--color-text-background-opaque', '#16161d');
+                    html.style.setProperty('--color-link', 'var(--color-text)');
+                    html.style.setProperty('--color-outline', 'var(--color-text)');
+                    html.style.setProperty('--color-scroll-button-stroke', 'var(--color-outline)');
+                    html.style.setProperty('--color-scroll-button-fill', 'var(--color-text-background-opaque)');
+                    inputIsValid = true;
+                    break;
+                case 'orange':
+                    html.style.setProperty('--color-background', '#d95d39');
+                    html.style.setProperty('--color-background-transparent', '#d95d39cc');
+                    html.style.setProperty('--color-background-name', '#ff8c42');
+                    html.style.setProperty('--color-text', '#050517');
+                    html.style.setProperty('--color-text-background', '#e2dbbecc');
+                    html.style.setProperty('--color-text-background-opaque', '#e2dbbe');
+                    html.style.setProperty('--color-link', 'var(--color-text)');
+                    html.style.setProperty('--color-outline', '#393d3f');
+                    html.style.setProperty('--color-scroll-button-stroke', 'var(--color-outline)');
+                    html.style.setProperty('--color-scroll-button-fill', 'var(--color-text-background-opaque)');
+                    inputIsValid = true;
+                    break;
+                default:
+                    input.addEventListener('animationend', removeAnimation);
+                    input.classList.add('animating');
+                    break;
+            }
+
+            if (inputIsValid) {
+                this.toggleModal();
+            } else {
+                form.reset();
+            }
+        });
+    }
+
+    attachMenuClickHandlers() {
+        Object.keys(this.pages).forEach((id) => {
+            this.pages[id].button.addEventListener('click', (event) => {
+                this.setActivePage(id);
+
+                if (id === 'home' && event.detail >= 3) {
+                    this.toggleModal();
+                }
+            });
+
+            if (id === 'home') {
+                this.pages[id].button.addEventListener('touchstart', (event) => {
+                    event.preventDefault();
+                    this.touchTimer = setTimeout(
+                        () => this.toggleModal(), this.touchLength);
+                });
+                this.pages[id].button.addEventListener('touchend', (event) => {
+                    event.preventDefault();
+                    if (this.touchTimer) {
+                        this.setActivePage(id);
+                        clearTimeout(this.touchTimer);
+                    }
+                });
+            }
+        });
+    }
 }
 
 new Website();
-
-
-
-// const showInput = () => {
-//     const modal = document.getElementById('zdf-modal');
-
-//     if (modal !== null) {
-//         if (!modal.classList.contains('show')) {
-//             modal.classList.add('show');
-//         } else {
-//             modal.classList.remove('show');
-//         }
-//     }
-// };
-
-// const toggleMode = (mode) => {
-//     let body = document.body;
-//     let hasMode1 = body.classList.contains('theme-one');
-//     let hasMode2 = body.classList.contains('theme-two');
-// };

@@ -12,15 +12,32 @@
     box-sizing: border-box;
 }
 
-html,
-body {
+html {
     font-family: 'PublicSans', system-ui, -apple-system;
+    --color-background: #ffffff;
+    --color-background-transparent: #ffffffcc;
+    --color-background-name: #d2d2d2a8;
+    --color-text: #16161d;
+    --color-text-background: #ffffffcc;
+    --color-text-background-opaque: #ffffff;
+    --color-link: var(--color-text);
+    --color-outline: var(--color-text);
+    --color-scroll-button-stroke: var(--color-outline);
+    --color-scroll-button-fill: var(--color-text-background-opaque);
+
+    --border-radius: 10px;
+    --border-radius-narrow: 5px;
+}
+
+body {
     width: 100vw;
     height: 100vh;
     overflow-x: hidden;
     position: relative;
     display: flex;
     flex-flow: column-reverse nowrap;
+    background-color: var(--color-background);
+    color: var(--color-text);
 }
 
 main {
@@ -90,6 +107,7 @@ main {
     font-family: 'MovementV', system-ui, -apple-system;
     font-weight: 100;
     transition: font-weight 0.5s;
+    color: var(--color-link);
 }
 
 .zdf-link:hover,

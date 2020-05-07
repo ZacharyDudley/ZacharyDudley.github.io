@@ -82,8 +82,13 @@
         </nav>
       <dialog id="zdf-modal" class="zdf-modal">
         <button class="zdf-button zdf-button--close"></button>
-        <input class="zdf-input">
-        <button class="zdf-button zdf-button--submit"></button>
+        <form id="zdf-form" class="zdf-form">
+          <div class="zdf-form-input">
+            <label for="password"></label>
+            <input id="password" type="text" name="password">
+          </div>
+          <input id="submit-button" type="submit" class="zdf-button zdf-button--submit" value="SUBMIT">
+        </form>
       </dialog>
     </header>
 

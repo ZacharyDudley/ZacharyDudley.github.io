@@ -30,12 +30,12 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 10px;
+    background-color: var(--color-text-background);
+    border-radius: var(--border-radius);
     padding: 10px;
     flex: 1 0 100%;
     margin-left: 10px;
-    border: 3px solid #000000;
+    border: 3px solid var(--color-outline);
 }
 
 .zdf-page-resume .zdf-page__list-item:first-of-type {
@@ -90,8 +90,8 @@
 }
 
 .zdf-button-scroll path {
-    stroke: #000000;
-    fill: #ffffff;
+    stroke: var(--color-scroll-button-stroke);
+    fill: var(--color-scroll-button-fill);
 }
 
 .zdf-button-scroll--left {
