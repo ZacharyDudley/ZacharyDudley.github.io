@@ -27,6 +27,9 @@ html {
 
     --border-radius: 10px;
     --border-radius-narrow: 5px;
+
+    background-color: var(--color-background);
+    color: var(--color-text);
 }
 
 body {
@@ -36,8 +39,6 @@ body {
     position: relative;
     display: flex;
     flex-flow: column-reverse nowrap;
-    background-color: var(--color-background);
-    color: var(--color-text);
 }
 
 main {
