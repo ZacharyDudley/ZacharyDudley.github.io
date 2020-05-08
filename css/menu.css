@@ -7,11 +7,18 @@
     flex: 0 0 auto;
 }
 
+.zdf-head__menu {
+    display: flex;
+    justify-content: center;
+}
+
 .zdf-head__menu-list {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 20px 15vw 6vh;
+    max-width: 900px;
+    flex: 1 1 auto;
 }
 
 .zdf-head__menu-list.overflow {
