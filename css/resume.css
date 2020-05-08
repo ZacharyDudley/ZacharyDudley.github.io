@@ -14,8 +14,16 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    margin-bottom: 5px;
+    margin-bottom: 30px;
     max-width: 600px;
+}
+
+.zdf-page-resume__skills {
+    justify-content: flex-end;
+}
+
+.zdf-page-resume__experience {
+    flex-grow: 0;
 }
 
 .zdf-page-resume__education {
@@ -28,6 +36,10 @@
 
 .zdf-page-resume .zdf-page__list-container {
     position: relative;
+}
+
+.zdf-page-resume__section .zdf-page__list {
+    padding-bottom: 8px;
 }
 
 .zdf-page-resume .zdf-page__list-item {
@@ -101,10 +113,10 @@
 
 .zdf-button-scroll--left {
     left: 0;
-    transform: translate(-60%, -50%) scale(1.5);
+    transform: translate(-50%, -50%) scale(1.75);
 }
 
 .zdf-button-scroll--right {
     right: 0;
-    transform: translate(60%, -50%) scale(1.5);
+    transform: translate(50%, -50%) scale(1.75);
 }
