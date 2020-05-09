@@ -171,10 +171,12 @@ body.show-modal::before {
     border-radius: var(--border-radius);
     border: 3px solid var(--color-outline);
     padding: 90px 40px 20px 40px;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: var(--color-background);
     margin: 0;
+    max-height: 100vh;
 }
 
 .zdf-modal.show {
@@ -262,4 +264,8 @@ body.show-modal::before {
 .zdf-button--close::after {
     border-right: 3px solid var(--color-text);
     transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.zdf-modal-text {
+    margin-top: 20px;
 }

@@ -81,7 +81,17 @@ class Website {
             element: document.getElementById('title-name-three'),
             interval: null,
         };
+        this.commands = [
+            'options',
+            'default',
+            'white',
+            'black',
+            'teal',
+            'orange',
+            'blue',
+        ];
         this.modalIsOpen = false;
+        this.showingOptions = false;
         this.touchLength = 1000;
         this.touchTimer = null;
 
@@ -298,16 +308,25 @@ class Website {
 
             const html = document.querySelector('html');
             const input = form.querySelector('.zdf-form-input');
+            const textArea = document.querySelector('#zdf-modal .zdf-modal-text');
+            const guess = form.elements[0].value.toLowerCase().trim();
             const removeAnimation = () => {
                 input.removeEventListener('animationend', removeAnimation);
                 input.classList.remove('animating');
             };
             let inputIsValid = false;
-            const guess = form.elements[0].value.toLowerCase().trim();
 
             switch (guess) {
-                case 'white':
-                case 'default':
+                case this.commands[0]:
+                    if (!this.showingOptions) {
+                        for (let i = 1; i < this.commands.length; i++) {
+                            textArea.innerText += `${this.commands[i]}\n`;
+                        }
+                        this.showingOptions = true;
+                    }
+                    break;
+                case this.commands[1]:
+                case this.commands[2]:
                     html.style.setProperty('--color-background', '#ffffff');
                     html.style.setProperty('--color-background-transparent', '#ffffffcc');
                     html.style.setProperty('--color-background-name', '#d2d2d2a8');
@@ -320,7 +339,7 @@ class Website {
                     html.style.setProperty('--color-scroll-button-fill', 'var(--color-text-background-opaque)');
                     inputIsValid = true;
                     break;
-                case 'black':
+                case this.commands[3]:
                     html.style.setProperty('--color-background', '#16161d');
                     html.style.setProperty('--color-background-transparent', '#16161dcc');
                     html.style.setProperty('--color-background-name', '#737373a8');
@@ -333,7 +352,7 @@ class Website {
                     html.style.setProperty('--color-scroll-button-fill', 'var(--color-text-background-opaque)');
                     inputIsValid = true;
                     break;
-                case 'teal':
+                case this.commands[4]:
                     html.style.setProperty('--color-background', '#0f8b8d');
                     html.style.setProperty('--color-background-transparent', '#0f8b8dcc');
                     html.style.setProperty('--color-background-name', '#3cbbb1');
@@ -346,20 +365,7 @@ class Website {
                     html.style.setProperty('--color-scroll-button-fill', 'var(--color-text-background-opaque)');
                     inputIsValid = true;
                     break;
-                case 'dark blue':
-                    html.style.setProperty('--color-background', '#313e50');
-                    html.style.setProperty('--color-background-transparent', '#313e50cc');
-                    html.style.setProperty('--color-background-name', '#545863');
-                    html.style.setProperty('--color-text', '#a8a8a8');
-                    html.style.setProperty('--color-text-background', '#16161dcc');
-                    html.style.setProperty('--color-text-background-opaque', '#16161d');
-                    html.style.setProperty('--color-link', 'var(--color-text)');
-                    html.style.setProperty('--color-outline', 'var(--color-text)');
-                    html.style.setProperty('--color-scroll-button-stroke', 'var(--color-outline)');
-                    html.style.setProperty('--color-scroll-button-fill', 'var(--color-text-background-opaque)');
-                    inputIsValid = true;
-                    break;
-                case 'orange':
+                case this.commands[5]:
                     html.style.setProperty('--color-background', '#d95d39');
                     html.style.setProperty('--color-background-transparent', '#d95d39cc');
                     html.style.setProperty('--color-background-name', '#ff8c42');
@@ -368,6 +374,19 @@ class Website {
                     html.style.setProperty('--color-text-background-opaque', '#e2dbbe');
                     html.style.setProperty('--color-link', 'var(--color-text)');
                     html.style.setProperty('--color-outline', '#393d3f');
+                    html.style.setProperty('--color-scroll-button-stroke', 'var(--color-outline)');
+                    html.style.setProperty('--color-scroll-button-fill', 'var(--color-text-background-opaque)');
+                    inputIsValid = true;
+                    break;
+                case this.commands[6]:
+                    html.style.setProperty('--color-background', '#313e50');
+                    html.style.setProperty('--color-background-transparent', '#313e50cc');
+                    html.style.setProperty('--color-background-name', '#545863');
+                    html.style.setProperty('--color-text', '#a8a8a8');
+                    html.style.setProperty('--color-text-background', '#16161dcc');
+                    html.style.setProperty('--color-text-background-opaque', '#16161d');
+                    html.style.setProperty('--color-link', 'var(--color-text)');
+                    html.style.setProperty('--color-outline', 'var(--color-text)');
                     html.style.setProperty('--color-scroll-button-stroke', 'var(--color-outline)');
                     html.style.setProperty('--color-scroll-button-fill', 'var(--color-text-background-opaque)');
                     inputIsValid = true;
