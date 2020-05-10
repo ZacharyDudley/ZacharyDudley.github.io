@@ -83,7 +83,6 @@ class Website {
         };
         this.commands = [
             'options',
-            'default',
             'white',
             'black',
             'teal',
@@ -326,7 +325,6 @@ class Website {
                     }
                     break;
                 case this.commands[1]:
-                case this.commands[2]:
                     html.style.setProperty('--color-background', '#ffffff');
                     html.style.setProperty('--color-background-transparent', '#ffffffcc');
                     html.style.setProperty('--color-background-name', '#d2d2d2a8');
@@ -339,7 +337,7 @@ class Website {
                     html.style.setProperty('--color-scroll-button-fill', 'var(--color-text-background-opaque)');
                     inputIsValid = true;
                     break;
-                case this.commands[3]:
+                case this.commands[2]:
                     html.style.setProperty('--color-background', '#16161d');
                     html.style.setProperty('--color-background-transparent', '#16161dcc');
                     html.style.setProperty('--color-background-name', '#737373a8');
@@ -352,7 +350,7 @@ class Website {
                     html.style.setProperty('--color-scroll-button-fill', 'var(--color-text-background-opaque)');
                     inputIsValid = true;
                     break;
-                case this.commands[4]:
+                case this.commands[3]:
                     html.style.setProperty('--color-background', '#0f8b8d');
                     html.style.setProperty('--color-background-transparent', '#0f8b8dcc');
                     html.style.setProperty('--color-background-name', '#3cbbb1');
@@ -365,7 +363,7 @@ class Website {
                     html.style.setProperty('--color-scroll-button-fill', 'var(--color-text-background-opaque)');
                     inputIsValid = true;
                     break;
-                case this.commands[5]:
+                case this.commands[4]:
                     html.style.setProperty('--color-background', '#d95d39');
                     html.style.setProperty('--color-background-transparent', '#d95d39cc');
                     html.style.setProperty('--color-background-name', '#ff8c42');
@@ -378,7 +376,7 @@ class Website {
                     html.style.setProperty('--color-scroll-button-fill', 'var(--color-text-background-opaque)');
                     inputIsValid = true;
                     break;
-                case this.commands[6]:
+                case this.commands[5]:
                     html.style.setProperty('--color-background', '#313e50');
                     html.style.setProperty('--color-background-transparent', '#313e50cc');
                     html.style.setProperty('--color-background-name', '#545863');

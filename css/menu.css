@@ -268,4 +268,5 @@ body.show-modal::before {
 
 .zdf-modal-text {
     margin-top: 20px;
+    color: var(--color-text);
 }
