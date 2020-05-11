@@ -151,6 +151,7 @@ class Website {
         pageOld.button.classList.remove('zdf-link--active');
         pageNew.button.classList.add('zdf-link--active');
 
+        pageOld.element.classList.remove('active');
         pageOld.element.classList.add('animating');
         pageNew.element.classList.remove('hidden');
         pageNew.element.classList.add('active');
