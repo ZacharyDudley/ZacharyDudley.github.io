@@ -1,325 +1,530 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
-    <meta name="author" content="Zachary Dudley Friedman">
-    <meta name="description" content="All Zach Friedman, all the time.">
-    <meta name="og:title" content="Zachary Dudley Friedman">
-    <meta name="og:description" content="All Zach Friedman, all the time.">
-    <base href="https://www.zacharydfriedman.com">
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/utility.css">
-    <link rel="stylesheet" href="./css/menu.css">
-    <link rel="stylesheet" href="./css/home.css">
-    <link rel="stylesheet" href="./css/work.css">
-    <link rel="stylesheet" href="./css/resume.css">
-    <link rel="stylesheet" href="./css/contact.css">
-    <script defer src="code.js"></script>
-    <title>Zachary Dudley Friedman</title>
-  </head>
 
-  <body>
-    <header class="zdf-head">
-      <h1 class="zdf-head__title zdf-title">
-        <span class="zdf-name zdf-name-first">zachary</span>
-        <span class="zdf-name zdf-name-middle">dudley</span>
-        <span class="zdf-name zdf-name-last">friedman</span>
-      </h1>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <meta name="author"
+        content="Zachary Dudley Friedman">
+  <meta name="description"
+        content="All Zach Friedman, all the time.">
+  <meta name="og:title"
+        content="Zachary Dudley Friedman">
+  <meta name="og:description"
+        content="All Zach Friedman, all the time.">
+  <!-- <base href="https://www.zacharydfriedman.com"> -->
+  <link rel="stylesheet"
+        href="./css/reset.css">
+  <link rel="stylesheet"
+        href="./css/utility.css">
+  <link rel="stylesheet"
+        href="./css/menu.css">
+  <link rel="stylesheet"
+        href="./css/home.css">
+  <link rel="stylesheet"
+        href="./css/work.css">
+  <link rel="stylesheet"
+        href="./css/resume.css">
+  <link rel="stylesheet"
+        href="./css/contact.css">
+  <script defer
+          src="code.js"></script>
+  <title>Zachary Dudley Friedman</title>
+</head>
 
-      <nav class="zdf-head__menu">
-          <ul class="zdf-head__menu-list">
-            <li class="zdf-head__menu-list-item">
-              <button id="button-home"
-                      class="zdf-head__menu-link zdf-button zdf-link zdf-link--active"
-                      data-page="home">
-                <span class="zdf-head__menu-link--text">home</span>
-                <span class="zdf-head__menu-link--icon">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M3 12L5 10M5 10L12 3L19 10M5 10V20C5 20.5523 5.44772 21 6 21H9M19 10L21 12M19 10V20C19 20.5523 18.5523 21 18 21H15M9 21C9.55228 21 10 20.5523 10 20V16C10 15.4477 10.4477 15 11 15H13C13.5523 15 14 15.4477 14 16V20C14 20.5523 14.4477 21 15 21M9 21H15" stroke="#4A5568" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-              </button>
-            </li>
-            <li class="zdf-head__menu-list-item">
-              <button id="button-work"
-                      class="zdf-head__menu-link zdf-button zdf-link"
-                      data-page="work">
-                  <span class="zdf-head__menu-link--text">work</span>
-                  <span class="zdf-head__menu-link--icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M9.66347 17H14.3364M11.9999 3V4M18.3639 5.63604L17.6568 6.34315M21 11.9999H20M4 11.9999H3M6.34309 6.34315L5.63599 5.63604M8.46441 15.5356C6.51179 13.5829 6.51179 10.4171 8.46441 8.46449C10.417 6.51187 13.5829 6.51187 15.5355 8.46449C17.4881 10.4171 17.4881 13.5829 15.5355 15.5356L14.9884 16.0827C14.3555 16.7155 13.9999 17.5739 13.9999 18.469V19C13.9999 20.1046 13.1045 21 11.9999 21C10.8954 21 9.99995 20.1046 9.99995 19V18.469C9.99995 17.5739 9.6444 16.7155 9.01151 16.0827L8.46441 15.5356Z" stroke="#4A5568" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </span>
-              </button>
-            </li>
-            <li class="zdf-head__menu-list-item zdf-head__menu--resume">
-              <button id="button-resume"
-                      class="zdf-head__menu-link zdf-button zdf-link"
-                      data-page="resume">
-                  <span class="zdf-head__menu-link--text">resume</span>
-                  <span class="zdf-head__menu-link--icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M21 13.2554C18.2207 14.3805 15.1827 15 12 15C8.8173 15 5.7793 14.3805 3 13.2554M16 6V4C16 2.89543 15.1046 2 14 2H10C8.89543 2 8 2.89543 8 4V6M12 12H12.01M5 20H19C20.1046 20 21 19.1046 21 18V8C21 6.89543 20.1046 6 19 6H5C3.89543 6 3 6.89543 3 8V18C3 19.1046 3.89543 20 5 20Z" stroke="#4A5568" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </span>
-              </button>
-              <a class="zdf-head__menu--resume-link" href="./Resume - Zachary Friedman.pdf" target="_blank">view as pdf</a>
-            </li>
-            <li class="zdf-head__menu-list-item">
-                <button id="button-contact"
-                        class="zdf-head__menu-link zdf-button zdf-link"
-                        data-page="contact">
-                    <span class="zdf-head__menu-link--text">contact</span>
-                    <span class="zdf-head__menu-link--icon">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 8L10.8906 13.2604C11.5624 13.7083 12.4376 13.7083 13.1094 13.2604L21 8M5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19Z" stroke="#4A5568" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                    </span>
-                </button>
-              </li>
-          </ul>
-        </nav>
-      <dialog id="zdf-modal" class="zdf-modal">
-        <button class="zdf-button zdf-button--close"></button>
-        <form id="zdf-form" class="zdf-form">
-          <div class="zdf-form-input">
-            <label for="password"></label>
-            <input id="password" type="text" name="password">
-          </div>
-          <input id="submit-button" type="submit" class="zdf-button zdf-button--submit" value="SUBMIT">
-        </form>
-        <div class="zdf-modal-text"></div>
-      </dialog>
-    </header>
+<body>
+  <header class="zdf-head">
+    <h1 class="zdf-head__title zdf-title">
+      <span class="zdf-name zdf-name-first">zachary</span>
+      <span class="zdf-name zdf-name-middle">dudley</span>
+      <span class="zdf-name zdf-name-last">friedman</span>
+    </h1>
 
-    <main>
-      <!-- PAGE - HOME -->
-      <article id="page-home" class="zdf-page zdf-page-home active">
-        <section class="zdf-page-home__section">
-          <h4 id="title-name-one" class="zdf-title zdf-home__name">DEVELOPER</h4>
-          <h4 id="title-name-two" class="zdf-title zdf-home__name">DESIGNER</h4>
-          <h4 id="title-name-three" class="zdf-title zdf-home__name">PHILOSOPHER</h4>
-        </section>
-      </article>
-
-      <!-- PAGE - WORK -->
-      <article id="page-work" class="zdf-page zdf-page-work hidden">
-        <section class="zdf-page__section zdf-page-work__section">
-          <details class="zdf-details">
-            <summary>
-              <h4 class="zdf-page__subtitle zdf-title">Axis of Eval</h4>
-            </summary>
-            <article class="zdf-work-description">
-              <p class="zdf-work-text">
-                I wanted to create an iOS game that could be played without needing
-                to look at the phone.
-
-                The goal of the game is to hold the phone in the correct orientation.
-              </p>
-              <div class="zdf-work-image-container">
-                <img class="zdf-work-image" src="./image/Axis.png" alt="axis" />
-              </div>
-            </article>
-          </details>
-        </section>
-
-        <section class="zdf-page__section zdf-page-work__section zdf-page-work__section--cem">
-          <details class="zdf-details">
-            <summary>
-              <h4 class="zdf-page__subtitle zdf-title">Chrome Extension Manager</h4>
-            </summary>
-            <article class="zdf-work-description">
-              <a class="zdf-work-link" href="https://github.com/ZacharyDudley/ChromeExtensionManager" target="_blank">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M13.8284 10.1716C12.2663 8.60948 9.73367 8.60948 8.17157 10.1716L4.17157 14.1716C2.60948 15.7337 2.60948 18.2663 4.17157 19.8284C5.73367 21.3905 8.26633 21.3905 9.82843 19.8284L10.93 18.7269M10.1716 13.8284C11.7337 15.3905 14.2663 15.3905 15.8284 13.8284L19.8284 9.82843C21.3905 8.26633 21.3905 5.73367 19.8284 4.17157C18.2663 2.60948 15.7337 2.60948 14.1716 4.17157L13.072 5.27118" stroke="#4A5568" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-              <p class="zdf-work-text">
-                One thing I do not like about Chrome: it's not easy to enable/disable
-                extensions. You have to go to the three-dot menu, then to other tools,
-                then extensions, and then find the extension and turn it off.
-                <br />
-                <br />
-                This extension allows you to see all installed extensions and turn them
-                on or off without having to traverse a single menu. There's also a
-                'turn all off/on' switch, as well as the ability to lock extensions on or off.
-              </p>
-              <div class="zdf-work-image-container">
-                <img class="zdf-work-image" src="./image/Chrome Extension Manager.png" alt="chrome extension manager" />
-              </div>
-            </article>
-          </details>
-        </section>
-
-        <section class="zdf-page__section zdf-page-work__section">
-          <details class="zdf-details">
-            <summary>
-              <h4 class="zdf-page__subtitle zdf-title">Tetris</h4>
-            </summary>
-            <article class="zdf-work-description">
-              <a class="zdf-work-link" href="https://github.com/ZacharyDudley/tetris-app" target="_blank">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M13.8284 10.1716C12.2663 8.60948 9.73367 8.60948 8.17157 10.1716L4.17157 14.1716C2.60948 15.7337 2.60948 18.2663 4.17157 19.8284C5.73367 21.3905 8.26633 21.3905 9.82843 19.8284L10.93 18.7269M10.1716 13.8284C11.7337 15.3905 14.2663 15.3905 15.8284 13.8284L19.8284 9.82843C21.3905 8.26633 21.3905 5.73367 19.8284 4.17157C18.2663 2.60948 15.7337 2.60948 14.1716 4.17157L13.072 5.27118" stroke="#4A5568" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-              <p class="zdf-work-text">
-                I wanted to learn React Native, so I made Tetris.
-              </p>
-              <div class="zdf-work-image-container">
-                <img class="zdf-work-image" src="./image/TetrisMenu.png" alt="" />
-                <img class="zdf-work-image" src="./image/TetrisGameplay.png" alt="" />
-                <img class="zdf-work-image" src="./image/TetrisGameplay2.png" alt="" />
-                <img class="zdf-work-image" src="./image/TetrisGameover.png" alt="" />
-              </div>
-            </article>
-          </details>
-        </section>
-
-        <section class="zdf-page__section zdf-page-work__section">
-          <details class="zdf-details">
-            <summary>
-              <h4 class="zdf-page__subtitle zdf-title">Chessball</h4>
-            </summary>
-            <article class="zdf-work-description">
-              <a class="zdf-work-link" href="https://github.com/ZacharyDudley/chessball" target="_blank">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M13.8284 10.1716C12.2663 8.60948 9.73367 8.60948 8.17157 10.1716L4.17157 14.1716C2.60948 15.7337 2.60948 18.2663 4.17157 19.8284C5.73367 21.3905 8.26633 21.3905 9.82843 19.8284L10.93 18.7269M10.1716 13.8284C11.7337 15.3905 14.2663 15.3905 15.8284 13.8284L19.8284 9.82843C21.3905 8.26633 21.3905 5.73367 19.8284 4.17157C18.2663 2.60948 15.7337 2.60948 14.1716 4.17157L13.072 5.27118" stroke="#4A5568" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-              <p class="zdf-work-text">
-                A work-in-progress: chess and soccer.
-              </p>
-            </article>
-          </details>
-        </section>
-
-        <section class="zdf-page__section zdf-page-work__section">
-          <details class="zdf-details">
-            <summary>
-              <h4 class="zdf-page__subtitle zdf-title">ZacharyD<wbr>Friedman<wbr>.com</h4>
-            </summary>
-            <article class="zdf-work-description">
-              <p class="zdf-work-text">
-                My original website was built with React, Redux, and a host of other
-                node modules. This was a bit overkill for the scope of my website,
-                so I decided to remake my site using nothing but HTML, CSS, and JavaScript.
-              </p>
-            </article>
-          </details>
-        </section>
-
-      </article>
-
-      <!-- PAGE - RESUME -->
-      <article id="page-resume" class="zdf-page zdf-page-resume hidden">
-        <section class="zdf-page__section zdf-page-resume__section zdf-page-resume__skills">
-          <h4 class="zdf-page__subtitle zdf-title">skills</h4>
-          <ul class="zdf-page__list">
-            <li class="zdf-page__list-item">
-              <p>
-                JavaScript,
-                Node.js,
-                HTML5,
-                CSS3,
-                React,
-                Redux,
-                Vue
-              </p>
-            </li>
-          </ul>
-        </section>
-        <section class="zdf-page__section zdf-page-resume__section zdf-page-resume__experience" data-section="scroll">
-          <h4 class="zdf-page__subtitle zdf-title">experience</h4>
-          <div class="zdf-page__list-container">
-            <button class="zdf-button zdf-button-scroll zdf-button-scroll--left" data-scroll="button-left">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M11 15L8 12M8 12L11 9M8 12L16 12M3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12Z" stroke="#4A5568" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <nav class="zdf-head__menu">
+      <ul class="zdf-head__menu-list">
+        <li class="zdf-head__menu-list-item">
+          <button id="button-home"
+                  class="zdf-head__menu-link zdf-button zdf-link zdf-link--active"
+                  data-page="home">
+            <span class="zdf-head__menu-link--text">home</span>
+            <span class="zdf-head__menu-link--icon">
+              <svg width="24"
+                   height="24"
+                   viewBox="0 0 24 24"
+                   fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 12L5 10M5 10L12 3L19 10M5 10V20C5 20.5523 5.44772 21 6 21H9M19 10L21 12M19 10V20C19 20.5523 18.5523 21 18 21H15M9 21C9.55228 21 10 20.5523 10 20V16C10 15.4477 10.4477 15 11 15H13C13.5523 15 14 15.4477 14 16V20C14 20.5523 14.4477 21 15 21M9 21H15"
+                      stroke="#4A5568"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round" />
               </svg>
-            </button>
-            <ul class="zdf-page__list" data-scroll="container">
-              <li class="zdf-page__list-item zdf-resume-card">
+            </span>
+          </button>
+        </li>
+        <li class="zdf-head__menu-list-item">
+          <button id="button-work"
+                  class="zdf-head__menu-link zdf-button zdf-link"
+                  data-page="work">
+            <span class="zdf-head__menu-link--text">work</span>
+            <span class="zdf-head__menu-link--icon">
+              <svg width="24"
+                   height="24"
+                   viewBox="0 0 24 24"
+                   fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path d="M9.66347 17H14.3364M11.9999 3V4M18.3639 5.63604L17.6568 6.34315M21 11.9999H20M4 11.9999H3M6.34309 6.34315L5.63599 5.63604M8.46441 15.5356C6.51179 13.5829 6.51179 10.4171 8.46441 8.46449C10.417 6.51187 13.5829 6.51187 15.5355 8.46449C17.4881 10.4171 17.4881 13.5829 15.5355 15.5356L14.9884 16.0827C14.3555 16.7155 13.9999 17.5739 13.9999 18.469V19C13.9999 20.1046 13.1045 21 11.9999 21C10.8954 21 9.99995 20.1046 9.99995 19V18.469C9.99995 17.5739 9.6444 16.7155 9.01151 16.0827L8.46441 15.5356Z"
+                      stroke="#4A5568"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round" />
+              </svg>
+            </span>
+          </button>
+        </li>
+        <li class="zdf-head__menu-list-item zdf-head__menu--resume">
+          <button id="button-resume"
+                  class="zdf-head__menu-link zdf-button zdf-link"
+                  data-page="resume">
+            <span class="zdf-head__menu-link--text">resume</span>
+            <span class="zdf-head__menu-link--icon">
+              <svg width="24"
+                   height="24"
+                   viewBox="0 0 24 24"
+                   fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 13.2554C18.2207 14.3805 15.1827 15 12 15C8.8173 15 5.7793 14.3805 3 13.2554M16 6V4C16 2.89543 15.1046 2 14 2H10C8.89543 2 8 2.89543 8 4V6M12 12H12.01M5 20H19C20.1046 20 21 19.1046 21 18V8C21 6.89543 20.1046 6 19 6H5C3.89543 6 3 6.89543 3 8V18C3 19.1046 3.89543 20 5 20Z"
+                      stroke="#4A5568"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round" />
+              </svg>
+            </span>
+          </button>
+          <a class="zdf-head__menu--resume-link"
+             href="./Resume - Zachary Friedman.pdf"
+             target="_blank">view as pdf</a>
+        </li>
+        <li class="zdf-head__menu-list-item">
+          <button id="button-contact"
+                  class="zdf-head__menu-link zdf-button zdf-link"
+                  data-page="contact">
+            <span class="zdf-head__menu-link--text">contact</span>
+            <span class="zdf-head__menu-link--icon">
+              <svg width="24"
+                   height="24"
+                   viewBox="0 0 24 24"
+                   fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 8L10.8906 13.2604C11.5624 13.7083 12.4376 13.7083 13.1094 13.2604L21 8M5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19Z"
+                      stroke="#4A5568"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round" />
+              </svg>
+            </span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+    <dialog id="zdf-modal"
+            class="zdf-modal">
+      <button class="zdf-button zdf-button--close"></button>
+      <form id="zdf-form"
+            class="zdf-form">
+        <div class="zdf-form-input">
+          <label for="password"></label>
+          <input id="password"
+                 type="text"
+                 name="password">
+        </div>
+        <input id="submit-button"
+               type="submit"
+               class="zdf-button zdf-button--submit"
+               value="SUBMIT">
+      </form>
+      <div class="zdf-modal-text"></div>
+    </dialog>
+  </header>
+
+  <main>
+    <!-- PAGE - HOME -->
+    <article id="page-home"
+             class="zdf-page zdf-page-home active">
+      <section class="zdf-page-home__section">
+        <h4 id="title-name-one"
+            class="zdf-title zdf-home__name">DEVELOPER</h4>
+        <h4 id="title-name-two"
+            class="zdf-title zdf-home__name">DESIGNER</h4>
+        <h4 id="title-name-three"
+            class="zdf-title zdf-home__name">PHILOSOPHER</h4>
+      </section>
+    </article>
+
+    <!-- PAGE - WORK -->
+    <article id="page-work"
+             class="zdf-page zdf-page-work hidden">
+      <section class="zdf-page__section zdf-page-work__section">
+        <details class="zdf-details">
+          <summary>
+            <h4 class="zdf-page__subtitle zdf-title">Axis of Eval</h4>
+          </summary>
+          <article class="zdf-work-description">
+            <p class="zdf-work-text">
+              I wanted to create an iOS game that could be played without needing
+              to look at the phone.
+
+              The goal of the game is to hold the phone in the correct orientation.
+            </p>
+            <div class="zdf-work-image-container">
+              <img class="zdf-work-image"
+                   src="./image/Axis.png"
+                   alt="axis" />
+            </div>
+          </article>
+        </details>
+      </section>
+
+      <section class="zdf-page__section zdf-page-work__section zdf-page-work__section--cem">
+        <details class="zdf-details">
+          <summary>
+            <h4 class="zdf-page__subtitle zdf-title">Chrome Extension Manager</h4>
+          </summary>
+          <article class="zdf-work-description">
+            <a class="zdf-work-link"
+               href="https://github.com/ZacharyDudley/ChromeExtensionManager"
+               target="_blank">
+              <svg width="24"
+                   height="24"
+                   viewBox="0 0 24 24"
+                   fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.8284 10.1716C12.2663 8.60948 9.73367 8.60948 8.17157 10.1716L4.17157 14.1716C2.60948 15.7337 2.60948 18.2663 4.17157 19.8284C5.73367 21.3905 8.26633 21.3905 9.82843 19.8284L10.93 18.7269M10.1716 13.8284C11.7337 15.3905 14.2663 15.3905 15.8284 13.8284L19.8284 9.82843C21.3905 8.26633 21.3905 5.73367 19.8284 4.17157C18.2663 2.60948 15.7337 2.60948 14.1716 4.17157L13.072 5.27118"
+                      stroke="#4A5568"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round" />
+              </svg>
+            </a>
+            <p class="zdf-work-text">
+              One thing I do not like about Chrome: it's not easy to enable/disable
+              extensions. You have to go to the three-dot menu, then to other tools,
+              then extensions, and then find the extension and turn it off.
+              <br />
+              <br />
+              This extension allows you to see all installed extensions and turn them
+              on or off without having to traverse a single menu. There's also a
+              'turn all off/on' switch, as well as the ability to lock extensions on or off.
+            </p>
+            <div class="zdf-work-image-container">
+              <img class="zdf-work-image"
+                   src="./image/Chrome Extension Manager.png"
+                   alt="chrome extension manager" />
+            </div>
+          </article>
+        </details>
+      </section>
+
+      <section class="zdf-page__section zdf-page-work__section">
+        <details class="zdf-details">
+          <summary>
+            <h4 class="zdf-page__subtitle zdf-title">Tetris</h4>
+          </summary>
+          <article class="zdf-work-description">
+            <a class="zdf-work-link"
+               href="https://github.com/ZacharyDudley/tetris-app"
+               target="_blank">
+              <svg width="24"
+                   height="24"
+                   viewBox="0 0 24 24"
+                   fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.8284 10.1716C12.2663 8.60948 9.73367 8.60948 8.17157 10.1716L4.17157 14.1716C2.60948 15.7337 2.60948 18.2663 4.17157 19.8284C5.73367 21.3905 8.26633 21.3905 9.82843 19.8284L10.93 18.7269M10.1716 13.8284C11.7337 15.3905 14.2663 15.3905 15.8284 13.8284L19.8284 9.82843C21.3905 8.26633 21.3905 5.73367 19.8284 4.17157C18.2663 2.60948 15.7337 2.60948 14.1716 4.17157L13.072 5.27118"
+                      stroke="#4A5568"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round" />
+              </svg>
+            </a>
+            <p class="zdf-work-text">
+              I wanted to learn React Native, so I made Tetris.
+            </p>
+            <div class="zdf-work-image-container">
+              <img class="zdf-work-image"
+                   src="./image/TetrisMenu.png"
+                   alt="" />
+              <img class="zdf-work-image"
+                   src="./image/TetrisGameplay.png"
+                   alt="" />
+              <img class="zdf-work-image"
+                   src="./image/TetrisGameplay2.png"
+                   alt="" />
+              <img class="zdf-work-image"
+                   src="./image/TetrisGameover.png"
+                   alt="" />
+            </div>
+          </article>
+        </details>
+      </section>
+
+      <section class="zdf-page__section zdf-page-work__section">
+        <details class="zdf-details">
+          <summary>
+            <h4 class="zdf-page__subtitle zdf-title">Chessball</h4>
+          </summary>
+          <article class="zdf-work-description">
+            <a class="zdf-work-link"
+               href="https://github.com/ZacharyDudley/chessball"
+               target="_blank">
+              <svg width="24"
+                   height="24"
+                   viewBox="0 0 24 24"
+                   fill="none"
+                   xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.8284 10.1716C12.2663 8.60948 9.73367 8.60948 8.17157 10.1716L4.17157 14.1716C2.60948 15.7337 2.60948 18.2663 4.17157 19.8284C5.73367 21.3905 8.26633 21.3905 9.82843 19.8284L10.93 18.7269M10.1716 13.8284C11.7337 15.3905 14.2663 15.3905 15.8284 13.8284L19.8284 9.82843C21.3905 8.26633 21.3905 5.73367 19.8284 4.17157C18.2663 2.60948 15.7337 2.60948 14.1716 4.17157L13.072 5.27118"
+                      stroke="#4A5568"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round" />
+              </svg>
+            </a>
+            <p class="zdf-work-text">
+              A work-in-progress: chess and soccer.
+            </p>
+          </article>
+        </details>
+      </section>
+
+      <section class="zdf-page__section zdf-page-work__section">
+        <details class="zdf-details">
+          <summary>
+            <h4 class="zdf-page__subtitle zdf-title">ZacharyD<wbr>Friedman<wbr>.com</h4>
+          </summary>
+          <article class="zdf-work-description">
+            <p class="zdf-work-text">
+              My original website was built with React, Redux, and a host of other
+              node modules. This was a bit overkill for the scope of my website,
+              so I decided to remake my site using nothing but HTML, CSS, and JavaScript.
+            </p>
+          </article>
+        </details>
+      </section>
+
+    </article>
+
+    <!-- PAGE - RESUME -->
+    <article id="page-resume"
+             class="zdf-page zdf-page-resume hidden">
+      <section class="zdf-page__section zdf-page-resume__section zdf-page-resume__skills">
+        <h4 class="zdf-page__subtitle zdf-title">skills</h4>
+        <ul class="zdf-page__list">
+          <li class="zdf-page__list-item">
+            <p>
+              JavaScript, Node.js, Next.js, HTML5, CSS3, Vue, Vuex, React, Redux
+            </p>
+          </li>
+        </ul>
+      </section>
+      <section class="zdf-page__section zdf-page-resume__section zdf-page-resume__experience"
+               data-section="scroll">
+        <h4 class="zdf-page__subtitle zdf-title">experience</h4>
+        <div class="zdf-page__list-container">
+          <button class="zdf-button zdf-button-scroll zdf-button-scroll--left"
+                  data-scroll="button-left">
+            <svg width="24"
+                 height="24"
+                 viewBox="0 0 24 24"
+                 fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 15L8 12M8 12L11 9M8 12L16 12M3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12Z"
+                    stroke="#4A5568"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+          </button>
+          <ul class="zdf-page__list"
+              data-scroll="container">
+            <li class="zdf-page__list-item zdf-resume-card">
+              <div class="zdf-resume-card__head">
                 <h6 class="zdf-resume-experience__title">Front End Developer</h6>
-                <h6 class="zdf-resume-experience__company">Hyatt Hotels Corporation</h6>
-                <p class="zdf-resume-experience__location">Chicago, IL</p>
-                <p class="zdf-resume-experience__date"><time datetime="2018">2018</time> - <time datetime="2020">2020</time></p>
-                <p class="zdf-resume-experience__description">Redesigned and optimized Hyatt's suite of websites</p>
-                <p class="zdf-resume-experience__description">A/B tested to develop new features and functionality</p>
-              </li>
-              <li class="zdf-page__list-item">
-                <h6 class="zdf-resume-experience__title">QA Tester</h6>
-                <h6 class="zdf-resume-experience__company">iBeta Quality Assurance</h6>
-                <p class="zdf-resume-experience__location">Denver, CO</p>
-                <p class="zdf-resume-experience__date"><time datetime="2011">2011</time> - <time datetime="2012">2012</time></p>
-                <p class="zdf-resume-experience__description">Worked with a team to test pre-release consumer software</p>
-              </li>
-            </ul>
-            <button class="zdf-button zdf-button-scroll zdf-button-scroll--right" data-scroll="button-right">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M13 9L16 12M16 12L13 15M16 12L8 12M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#4A5568" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-          </div>
-        </section>
-        <section class="zdf-page__section zdf-page-resume__section zdf-page-resume__education" data-section="scroll">
-          <h4 class="zdf-page__subtitle zdf-title">education</h4>
-          <div class="zdf-page__list-container">
-            <button class="zdf-button zdf-button-scroll zdf-button-scroll--left" data-scroll="button-left">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M11 15L8 12M8 12L11 9M8 12L16 12M3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12Z" stroke="#4A5568" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-            <ul class="zdf-page__list" data-scroll="container">
-              <li class="zdf-page__list-item">
-                <h6 class="zdf-resume-education__title">Fullstack Academy of Code</h6>
-                <p class="zdf-resume-education__location">Chicago, IL</p>
-                <p class="zdf-resume-education__date"><time datetime="2017">2017</time></p>
-                <p class="zdf-resume-education__degree">Software Engineering Immersive</p>
-              </li>
-              <li class="zdf-page__list-item">
-                <h6 class="zdf-resume-education__title">Milwaukee Area Technical College</h6>
-                <p class="zdf-resume-education__location">Milwaukee, WI</p>
-                <p class="zdf-resume-education__date"><time datetime="2014">2014</time> - <time datetime="2017">2017</time></p>
-                <p class="zdf-resume-education__degree">Associate of Applied Science: Computer Simulation and Gaming</p>
-              </li>
-              <li class="zdf-page__list-item">
-                <h6 class="zdf-resume-education__title">University of Akron</h6>
-                <p class="zdf-resume-education__location">Akron, OH</p>
-                <p class="zdf-resume-education__date"><time datetime="2012">2012</time></p>
-                <p class="zdf-resume-education__degree">Courses towards Masters in English</p>
-              </li>
-              <li class="zdf-page__list-item">
-                <h6 class="zdf-resume-education__title">Miami University</h6>
-                <p class="zdf-resume-education__location">Oxford, OH</p>
-                <p class="zdf-resume-education__date"><time datetime="2004">2004</time> - <time datetime="2008">2008</time></p>
-                <p class="zdf-resume-education__degree">Bachelor of Arts: Philosophy</p>
-              </li>
-            </ul>
-            <button class="zdf-button zdf-button-scroll zdf-button-scroll--right" data-scroll="button-right">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M13 9L16 12M16 12L13 15M16 12L8 12M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#4A5568" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-          </div>
-        </section>
-      </article>
+                <p class="zdf-resume-experience__company">Hyatt Hotels Corporation</p>
+                <span class="zdf-resume-card__head--detail">
+                  <p class="zdf-resume-experience__location">Chicago, IL</p>
+                  <p class="zdf-resume-experience__date">
+                    <time datetime="2018">2018</time> - <time datetime="2020">2020</time>
+                    /
+                    <time datetime="2021">2021</time> - <time datetime="2023">2023</time>
+                  </p>
+                </span>
+              </div>
+              <ul class="zdf-page__list--bullet">
+                <li class="zdf-resume-experience__description">Migrated and created new features for guest in-stay
+                  experience and hotel kiosk check-in station</li>
+                <li class="zdf-resume-experience__description">Utilized Next.js for server-side rendering</li>
+                <li class="zdf-resume-experience__description">Employed React hooks to create reusable components</li>
+                <li class="zdf-resume-experience__description">Deployed code via Jenkins and Gitlab</li>
+                <li class="zdf-resume-experience__description">Inherited 3rd party microservices for building UI
+                  components
+                </li>
+                <li class="zdf-resume-experience__description">Technology stack includes: Next.js, React, Node.js, SCSS
+                </li>
+              </ul>
+            </li>
+            <li class="zdf-page__list-item zdf-resume-card">
+              <div class="zdf-resume-card__head">
+                <h6 class="zdf-resume-experience__title">Front End Developer</h6>
+                <p class="zdf-resume-experience__company">Northern Trust</p>
+                <span class="zdf-resume-card__head--detail">
+                  <p class="zdf-resume-experience__location">Chicago, IL</p>
+                  <p class="zdf-resume-experience__date">
+                    <time datetime="2021">2021</time>
+                  </p>
+                </span>
+              </div>
+              <ul class="zdf-page__list--bullet">
+                <li class="zdf-resume-experience__description">Created, refined, and maintained React js components for
+                  Northern Trust digital innovations team</li>
+                <li class="zdf-resume-experience__description">Built, tested, and deployed features in React, Redux,
+                  React Test Library, and SCSS pre-processors</li>
+                <li class="zdf-resume-experience__description">Working in a fast-paced tdd/agile development team
+                  deploying to PCF cloud services</li>
+                <li class="zdf-resume-experience__description">Ensured functionality and styling of components as
+                  frameworks and apps used are white-labeled for other product teams to customize to their own
+                  application liking for their customers</li>
+                <li class="zdf-resume-experience__description">Technology stack includes: React, Redux, SCSS, Chartjs,
+                  CSS3, HTML5, PCF, Jest, docker, kubernetes</li>
+              </ul>
+            </li>
+            <li class="zdf-page__list-item zdf-resume-card">
+              <div class="zdf-resume-card__head">
+                <h6 class="zdf-resume-experience__title">Front End Developer</h6>
+                <p class="zdf-resume-experience__company">Peapod Online Grocer</p>
+                <span class="zdf-resume-card__head--detail">
+                  <p class="zdf-resume-experience__location">Chicago, IL</p>
+                  <p class="zdf-resume-experience__date">
+                    <time datetime="2020">2020</time> - <time datetime="2021">2021</time>
+                  </p>
+                </span>
+              </div>
+              <ul class="zdf-page__list--bullet">
+                <li class="zdf-resume-experience__description">Created, refined, and maintained Vue components for the
+                  Peapod eCommerce platform</li>
+                <li class="zdf-resume-experience__description">Assisted in sitewide migration from Angular to Vue</li>
+                <li class="zdf-resume-experience__description">Updated existing interfaces for ADA compliance</li>
+                <li class="zdf-resume-experience__description">Ensured functionality and styling of components in
+                  desktop, mobile web, and mobile app environments</li>
+                <li class="zdf-resume-experience__description">Technology stack includes: Node.js, Vue, HTML5, CSS3,
+                  Sass, Storybook</li>
+              </ul>
+            </li>
+          </ul>
+          <button class="zdf-button zdf-button-scroll zdf-button-scroll--right"
+                  data-scroll="button-right">
+            <svg width="24"
+                 height="24"
+                 viewBox="0 0 24 24"
+                 fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path d="M13 9L16 12M16 12L13 15M16 12L8 12M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                    stroke="#4A5568"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+      </section>
+      <section class="zdf-page__section zdf-page-resume__section zdf-page-resume__education"
+               data-section="scroll">
+        <h4 class="zdf-page__subtitle zdf-title">education</h4>
+        <div class="zdf-page__list-container">
+          <button class="zdf-button zdf-button-scroll zdf-button-scroll--left"
+                  data-scroll="button-left">
+            <svg width="24"
+                 height="24"
+                 viewBox="0 0 24 24"
+                 fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path d="M11 15L8 12M8 12L11 9M8 12L16 12M3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12Z"
+                    stroke="#4A5568"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+          </button>
+          <ul class="zdf-page__list"
+              data-scroll="container">
+            <li class="zdf-page__list-item">
+              <h6 class="zdf-resume-education__title">Fullstack Academy of Code</h6>
+              <p class="zdf-resume-education__location">Chicago, IL</p>
+              <p class="zdf-resume-education__date"><time datetime="2017">2017</time></p>
+              <p class="zdf-resume-education__degree">Software Engineering Immersive</p>
+            </li>
+            <li class="zdf-page__list-item">
+              <h6 class="zdf-resume-education__title">Milwaukee Area Technical College</h6>
+              <p class="zdf-resume-education__location">Milwaukee, WI</p>
+              <p class="zdf-resume-education__date"><time datetime="2014">2014</time> - <time
+                      datetime="2017">2017</time></p>
+              <p class="zdf-resume-education__degree">Associate of Applied Science: Computer Simulation and Gaming</p>
+            </li>
+            <li class="zdf-page__list-item">
+              <h6 class="zdf-resume-education__title">University of Akron</h6>
+              <p class="zdf-resume-education__location">Akron, OH</p>
+              <p class="zdf-resume-education__date"><time datetime="2012">2012</time></p>
+              <p class="zdf-resume-education__degree">Courses towards Masters in English</p>
+            </li>
+            <li class="zdf-page__list-item">
+              <h6 class="zdf-resume-education__title">Miami University</h6>
+              <p class="zdf-resume-education__location">Oxford, OH</p>
+              <p class="zdf-resume-education__date"><time datetime="2004">2004</time> - <time
+                      datetime="2008">2008</time></p>
+              <p class="zdf-resume-education__degree">Bachelor of Arts: Philosophy</p>
+            </li>
+          </ul>
+          <button class="zdf-button zdf-button-scroll zdf-button-scroll--right"
+                  data-scroll="button-right">
+            <svg width="24"
+                 height="24"
+                 viewBox="0 0 24 24"
+                 fill="none"
+                 xmlns="http://www.w3.org/2000/svg">
+              <path d="M13 9L16 12M16 12L13 15M16 12L8 12M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                    stroke="#4A5568"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+      </section>
+    </article>
 
-      <!-- PAGE - CONTACT -->
-      <article id="page-contact" class="zdf-page zdf-page-contact hidden">
-        <address class="zdf-page-contact-address">
-          <a class="zdf-page-contact__link zdf-link" href="mailto:contact@zacharydfriedman.com" target="_blank">email</a>
-          <h4 class="zdf-page-contact__text">zachary@ZacharyDFriedman.com</h4>
-        </address>
-        <address class="zdf-page-contact-address">
-          <a class="zdf-page-contact__link zdf-link" href="https://github.com/ZacharyDudley/" target="_blank">github</a>
-          <h4 class="zdf-page-contact__text">github.com/ZacharyDudley</h4>
-        </address>
-        <address class="zdf-page-contact-address">
-          <a class="zdf-page-contact__link zdf-link" href="https://www.linkedin.com/in/zacharydfriedman/" target="_blank">linkedIn</a>
-          <h4 class="zdf-page-contact__text">linkedin.com/in/zacharydfriedman</h4>
-        </address>
-      </article>
+    <!-- PAGE - CONTACT -->
+    <article id="page-contact"
+             class="zdf-page zdf-page-contact hidden">
+      <address class="zdf-page-contact-address">
+        <a class="zdf-page-contact__link zdf-link"
+           href="mailto:contact@zacharydfriedman.com"
+           target="_blank">email</a>
+        <h4 class="zdf-page-contact__text">zachary@ZacharyDFriedman.com</h4>
+      </address>
+      <address class="zdf-page-contact-address">
+        <a class="zdf-page-contact__link zdf-link"
+           href="https://github.com/ZacharyDudley/"
+           target="_blank">github</a>
+        <h4 class="zdf-page-contact__text">github.com/ZacharyDudley</h4>
+      </address>
+      <address class="zdf-page-contact-address">
+        <a class="zdf-page-contact__link zdf-link"
+           href="https://www.linkedin.com/in/zacharydfriedman/"
+           target="_blank">linkedIn</a>
+        <h4 class="zdf-page-contact__text">linkedin.com/in/zacharydfriedman</h4>
+      </address>
+    </article>
 
-    </main>
-  </body>
+  </main>
+</body>
+
 </html>

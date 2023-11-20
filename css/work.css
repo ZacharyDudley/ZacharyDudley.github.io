@@ -20,10 +20,22 @@
 
 .zdf-work-link {
     align-self: flex-end;
+    /* transform: scale(1); */
+    /* transition: transform 0.5s; */
 }
+
+/* .zdf-work-link:hover {
+    transform: scale(2);
+} */
 
 .zdf-work-link path {
     stroke: var(--color-outline);
+    stroke-width: 2;
+    transition: stroke-width 0.5s;
+}
+
+.zdf-work-link:hover path {
+    stroke-width: 3;
 }
 
 .zdf-work-text {
@@ -44,8 +56,16 @@
 
 .zdf-details .zdf-title {
     cursor: pointer;
-    display: inline;
+    display: inline-block;
+    width: 100%;
     vertical-align: middle;
+    font-weight: 100;
+    transition: font-weight 0.5s;
+}
+
+.zdf-details .zdf-title:hover,
+.zdf-details[open] .zdf-title {
+    font-weight: 900;
 }
 
 @media (min-width: 769px) {

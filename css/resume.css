@@ -58,6 +58,19 @@
     margin-left: 0;
 }
 
+.zdf-resume-card .zdf-page__list--bullet {
+    padding: 0 30px;
+}
+
+.zdf-resume-card__head {
+    width: 100%;
+}
+
+.zdf-resume-card__head--detail {
+    display: flex;
+    flex-direction: row;
+}
+
 .zdf-resume-experience__title,
 .zdf-resume-education__title {
     font-size: 2rem;
