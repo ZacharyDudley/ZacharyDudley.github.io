@@ -271,7 +271,7 @@ class Website {
         const body = document.querySelector('body');
         const modal = document.getElementById('zdf-modal');
         const form = document.getElementById('zdf-form');
-        const input = form.querySelector('.zdf-form-input input');
+        // const input = form.querySelector('.zdf-form-input input');
         const keyListener = (event) => {
             if (event.key === 'Escape') {
                 this.window.removeEventListener('keyup', keyListener);
@@ -284,12 +284,12 @@ class Website {
             if (!modal.classList.contains('show')) modal.classList.add('show');
 
             this.window.addEventListener('keyup', keyListener);
-            input.focus();
+            // input.focus();
         } else {
             if (body.classList.contains('show-modal')) body.classList.remove('show-modal');
             if (modal.classList.contains('show')) modal.classList.remove('show');
 
-            form.reset();
+            // form.reset();
         }
 
         this.modalIsOpen = !this.modalIsOpen;
@@ -303,28 +303,30 @@ class Website {
             this.toggleModal();
         });
 
-        form.addEventListener('submit', (event) => {
+        form.addEventListener('change', (event) => {
+        // form.addEventListener('submit', (event) => {
             event.preventDefault();
 
             const html = document.querySelector('html');
-            const input = form.querySelector('.zdf-form-input');
-            const textArea = document.querySelector('#zdf-modal .zdf-modal-text');
-            const guess = form.elements[0].value.toLowerCase().trim();
-            const removeAnimation = () => {
-                input.removeEventListener('animationend', removeAnimation);
-                input.classList.remove('animating');
-            };
-            let inputIsValid = false;
+            // const input = form.querySelector('.zdf-form-input');
+            // const textArea = document.querySelector('#zdf-modal .zdf-modal-text');
+            // const guess = form.elements[0].value.toLowerCase().trim();
+            // const removeAnimation = () => {
+            //     input.removeEventListener('animationend', removeAnimation);
+            //     input.classList.remove('animating');
+            // };
+            // let inputIsValid = false;
 
-            switch (guess) {
-                case this.commands[0]:
-                    if (!this.showingOptions) {
-                        for (let i = 1; i < this.commands.length; i++) {
-                            textArea.innerText += `${this.commands[i]}\n`;
-                        }
-                        this.showingOptions = true;
-                    }
-                    break;
+            switch (event.target.value) {
+            // switch (guess) {
+                // case this.commands[0]:
+                //     if (!this.showingOptions) {
+                //         for (let i = 1; i < this.commands.length; i++) {
+                //             textArea.innerText += `${this.commands[i]}\n`;
+                //         }
+                //         this.showingOptions = true;
+                //     }
+                //     break;
                 case this.commands[1]:
                     html.style.setProperty('--color-background', '#ffffff');
                     html.style.setProperty('--color-background-transparent', '#ffffffcc');
@@ -336,7 +338,7 @@ class Website {
                     html.style.setProperty('--color-outline', 'var(--color-text)');
                     html.style.setProperty('--color-scroll-button-stroke', 'var(--color-outline)');
                     html.style.setProperty('--color-scroll-button-fill', 'var(--color-text-background-opaque)');
-                    inputIsValid = true;
+                    // inputIsValid = true;
                     break;
                 case this.commands[2]:
                     html.style.setProperty('--color-background', '#16161d');
@@ -349,7 +351,7 @@ class Website {
                     html.style.setProperty('--color-outline', 'var(--color-text)');
                     html.style.setProperty('--color-scroll-button-stroke', 'var(--color-outline)');
                     html.style.setProperty('--color-scroll-button-fill', 'var(--color-text-background-opaque)');
-                    inputIsValid = true;
+                    // inputIsValid = true;
                     break;
                 case this.commands[3]:
                     html.style.setProperty('--color-background', '#0f8b8d');
@@ -362,7 +364,7 @@ class Website {
                     html.style.setProperty('--color-outline', 'var(--color-text)');
                     html.style.setProperty('--color-scroll-button-stroke', 'var(--color-outline)');
                     html.style.setProperty('--color-scroll-button-fill', 'var(--color-text-background-opaque)');
-                    inputIsValid = true;
+                    // inputIsValid = true;
                     break;
                 case this.commands[4]:
                     html.style.setProperty('--color-background', '#d95d39');
@@ -375,7 +377,7 @@ class Website {
                     html.style.setProperty('--color-outline', '#393d3f');
                     html.style.setProperty('--color-scroll-button-stroke', 'var(--color-outline)');
                     html.style.setProperty('--color-scroll-button-fill', 'var(--color-text-background-opaque)');
-                    inputIsValid = true;
+                    // inputIsValid = true;
                     break;
                 case this.commands[5]:
                     html.style.setProperty('--color-background', '#313e50');
@@ -388,19 +390,19 @@ class Website {
                     html.style.setProperty('--color-outline', 'var(--color-text)');
                     html.style.setProperty('--color-scroll-button-stroke', 'var(--color-outline)');
                     html.style.setProperty('--color-scroll-button-fill', 'var(--color-text-background-opaque)');
-                    inputIsValid = true;
+                    // inputIsValid = true;
                     break;
                 default:
-                    input.addEventListener('animationend', removeAnimation);
-                    input.classList.add('animating');
+                    // input.addEventListener('animationend', removeAnimation);
+                    // input.classList.add('animating');
                     break;
             }
 
-            if (inputIsValid) {
-                this.toggleModal();
-            } else {
-                form.reset();
-            }
+            // if (inputIsValid) {
+            //     this.toggleModal();
+            // } else {
+            //     form.reset();
+            // }
         });
     }
 

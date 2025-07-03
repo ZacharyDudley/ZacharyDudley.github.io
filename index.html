@@ -133,8 +133,9 @@
       <button class="zdf-button zdf-button--close"></button>
       <form id="zdf-form"
             class="zdf-form">
-        <div class="zdf-form-input">
-          <label for="password"></label>
+        <div class="zdf-form-input--radio">
+          <!-- <div class="zdf-form-input"> -->
+          <!-- <label for="password"></label>
           <input id="password"
                  type="text"
                  name="password">
@@ -142,7 +143,53 @@
         <input id="submit-button"
                type="submit"
                class="zdf-button zdf-button--submit"
-               value="SUBMIT">
+               value="SUBMIT"> -->
+          <div class="zdf-form-input--radio-option zdf-link zdf-form-input--radio-option__checked">
+            <input type="radio"
+                   name="theme_selection"
+                   class="zdf-form-input--radio-input"
+                   id="theme-white"
+                   value="white"
+                   checked="checked">
+            <label for="theme-white"
+                   class="zdf-form-input--radio-label">White</label>
+          </div>
+          <div class="zdf-form-input--radio-option zdf-link">
+            <input type="radio"
+                   name="theme_selection"
+                   class="zdf-form-input--radio-input"
+                   id="theme-black"
+                   value="black">
+            <label for="theme-black"
+                   class="zdf-form-input--radio-label">Black</label>
+          </div>
+          <div class="zdf-form-input--radio-option zdf-link">
+            <input type="radio"
+                   name="theme_selection"
+                   class="zdf-form-input--radio-input"
+                   id="theme-teal"
+                   value="teal">
+            <label for="theme-teal"
+                   class="zdf-form-input--radio-label">Teal</label>
+          </div>
+          <div class="zdf-form-input--radio-option zdf-link">
+            <input type="radio"
+                   name="theme_selection"
+                   class="zdf-form-input--radio-input"
+                   id="theme-orange"
+                   value="orange">
+            <label for="theme-orange"
+                   class="zdf-form-input--radio-label">Orange</label>
+          </div>
+          <div class="zdf-form-input--radio-option zdf-link">
+            <input type="radio"
+                   name="theme_selection"
+                   class="zdf-form-input--radio-input"
+                   id="theme-blue"
+                   value="blue">
+            <label for="theme-blue"
+                   class="zdf-form-input--radio-label">Blue</label>
+          </div>
       </form>
       <div class="zdf-modal-text"></div>
     </dialog>

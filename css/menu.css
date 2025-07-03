@@ -229,6 +229,15 @@ body.show-modal::before {
     border-color: #4D90FE;
 }
 
+.zdf-form-input--radio {
+    display: flex;
+    flex-direction: column;
+}
+
+.zdf-form-input--radio-option {
+    margin: 15px;
+}
+
 .zdf-button--submit {
     font-family: 'MovementV', system-ui, -apple-system;
     padding: 5px 15px;
